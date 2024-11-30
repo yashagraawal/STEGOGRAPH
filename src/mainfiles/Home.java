@@ -877,7 +877,7 @@ public class Home extends javax.swing.JFrame {
         
         try {
                 FileInputStream ip = new FileInputStream(p);
-                Connection conn = DriverManager.getConnection("jdbc:mysql://127.0.0.1:3306/detailsdb","root","1234yash") ;
+                Connection conn = DriverManager.getConnection("jdbc:mysql://127.0.0.1:3306/mydb","root","admin@123") ;
                 ps = (PreparedStatement) conn.prepareStatement("INSERT INTO userfile (usern,fromm,date,file,filetype,size) VALUES(?,?,?,?,?,?);");
                 ps.setString(1, sendfto.getText());
                 ps.setString(2, dispname.getText());
@@ -909,7 +909,7 @@ public class Home extends javax.swing.JFrame {
         
         try{
         Class.forName("com.mysql.jdbc.Driver");
-        con = DriverManager.getConnection("jdbc:mysql://127.0.0.1:3306/detailsdb","root","1234yash");
+        con = DriverManager.getConnection("jdbc:mysql://127.0.0.1:3306/mydb","root","admin@123");
 	st = con.createStatement();
         String nm = dispname.getText();
 	rs = st.executeQuery("select * from userfile where usern= '"+nm+"'");
@@ -954,7 +954,7 @@ public class Home extends javax.swing.JFrame {
         
         Class.forName("com.mysql.jdbc.Driver");
 		
-        con = DriverManager.getConnection("jdbc:mysql://127.0.0.1:3306/detailsdb?"+ "autoReconnect=true&useSSL=false","root","1234yash");
+        con = DriverManager.getConnection("jdbc:mysql://127.0.0.1:3306/mydb?"+ "autoReconnect=true&useSSL=false","root","admin@123");
 		
 	ps = con.prepareStatement("delete from userfile where (usern = ? AND fromm = ?) AND date = ?");
         ps.setString(1, dispname.getText());
@@ -990,7 +990,7 @@ public class Home extends javax.swing.JFrame {
         {
                     Class.forName("com.mysql.jdbc.Driver");
 		
-        con = DriverManager.getConnection("jdbc:mysql://127.0.0.1:3306/detailsdb?"+ "autoReconnect=true&useSSL=false","root","1234yash");
+        con = DriverManager.getConnection("jdbc:mysql://127.0.0.1:3306/mydb?"+ "autoReconnect=true&useSSL=false","root","admin@123");
 		
 	ps = con.prepareStatement("delete from userfile where usern = ?");
         ps.setString(1, dispname.getText());
@@ -1035,7 +1035,7 @@ public class Home extends javax.swing.JFrame {
         else
         {
             try {
-            con = DriverManager.getConnection("jdbc:mysql://127.0.0.1:3306/detailsdb?"+ "autoReconnect=true&useSSL=false","root","1234yash");
+            con = DriverManager.getConnection("jdbc:mysql://127.0.0.1:3306/mydb?"+ "autoReconnect=true&useSSL=false","root","admin@123");
             st = con.createStatement();
             rs =  st.executeQuery("Select file,filetype from userfile where (usern = '"+userna+"' AND fromm = '"+from+"' AND date = '"+date+"')");
             
@@ -1242,7 +1242,7 @@ public class Home extends javax.swing.JFrame {
         
         try {
                 FileInputStream ip = new FileInputStream(f1);
-                Connection conn = DriverManager.getConnection("jdbc:mysql://127.0.0.1:3306/detailsdb","root","1234yash") ;
+                Connection conn = DriverManager.getConnection("jdbc:mysql://127.0.0.1:3306/mydb","root","admin@123") ;
                 ps = (PreparedStatement) conn.prepareStatement("INSERT INTO userfile (usern,fromm,date,file,filetype,size) VALUES(?,?,?,?,?,?);");
                 ps.setString(1, sendmto.getText());
                 ps.setString(2, dispname.getText());

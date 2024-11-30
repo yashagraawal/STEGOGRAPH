@@ -220,7 +220,7 @@ public class logform extends javax.swing.JFrame {
         {    
         Class.forName("com.mysql.jdbc.Driver");
 		
-        con = DriverManager.getConnection("jdbc:mysql://127.0.0.1:3306/detailsdb","root","1234yash");
+        con = DriverManager.getConnection("jdbc:mysql://127.0.0.1:3306/mydb","root","admin@123");
 		
 	ps = (PreparedStatement) con.prepareStatement("select * from userdata where usern = ? and userp = ?");	
         ps.setString(1, name);

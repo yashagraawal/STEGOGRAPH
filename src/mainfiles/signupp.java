@@ -289,7 +289,7 @@ public class signupp extends javax.swing.JFrame {
         try{
         Class.forName("com.mysql.jdbc.Driver");
 		
-        con = DriverManager.getConnection("jdbc:mysql://127.0.0.1:3306/detailsdb","root","1234yash");
+        con = DriverManager.getConnection("jdbc:mysql://127.0.0.1:3306/mydb","root","admin@123");
 		
 	st = con.createStatement();
 		
